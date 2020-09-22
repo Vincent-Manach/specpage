@@ -22,8 +22,8 @@ window.cancelRequestAnimFrame = ( function() {
 // Initialize canvas and required variables
 var canvas = document.getElementById("canvas"),
     ctx = canvas.getContext("2d"), // Create canvas context
-    W = $('.game').innerWidth, // Window's width
-    H = $('.game').innerHeight, // Window's height
+    W = window.innerWidth, // Window's width
+    H = window.innerHeight, // Window's height
     particles = [], // Array containing particles
     ball = {}, // Ball object
     paddles = [2], // Array containing two paddles
