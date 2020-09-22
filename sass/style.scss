@@ -8,17 +8,17 @@ body {
     #container {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 55%;
     margin-right: auto;
     margin-left: auto;
 
         #logo {
             text-align: center;
-            margin: 30px 0 15px 0;
+            margin: 20px 0 15px 0;
 
             img {
-                height: 125px;
-                width: 125px;
+                height: 100px;
+                width: 100px;
             }
         }
 
@@ -28,12 +28,13 @@ body {
             margin-right: auto;
             margin-left: auto;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             
             .title {
                 background-color:#135375;
                 border-radius: 10px;
                 padding: 10px;
+                margin: 0;
             }
 
         }
@@ -44,12 +45,44 @@ body {
             #welcome {
                 width: 375px;
                 padding: 10px;
-                border: 1px solid orangered;
+                border: 1px solid #EE6F57;
                 border-radius: 10px;
                 text-align: center;
                 color: white;
             }
         }
+
+        .game-block {
+            color: white;
+            text-align: center;
+            .game-infos {
+                .game-name {
+                    background-color: #EE6F57;
+                    padding: 2px 10px 2px 10px;
+                    border-radius: 15px;
+                }
+
+                .infos {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    margin-top: 15px;
+
+                    .score {
+                        margin: 0;
+                        background-color:#135375;
+                        padding: 2px 10px 2px 10px;
+                        border-radius: 15px;
+                    }
+                }
+            }
+
+            .game {
+                width: auto;
+                height: 500px;
+                background-color: black;
+            }
+        }   
         
     }
 }
