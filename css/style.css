@@ -71,10 +71,12 @@ body #container .game-block .game-infos .infos .score {
   border-radius: 10px;
 }
 body #container .game-block .game {
-  width: auto;
-  height: 500px;
   background-color: black;
   margin-bottom: 10px;
+}
+body #container .game-block .game #canvas {
+  width: 800px;
+  height: 600px;
 }
 
 /*# sourceMappingURL=style.css.map */
