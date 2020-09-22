@@ -3,13 +3,19 @@ body {
   margin: 0;
   background-color: #00334E;
   font-family: "Open sans";
+  color: white;
 }
 body #container {
   display: flex;
   flex-direction: column;
   width: 55%;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 700px) {
+  body #container {
+    width: 95%;
+  }
 }
 body #container #logo {
   text-align: center;
@@ -22,10 +28,9 @@ body #container #logo img {
 body #container #main-title {
   text-align: center;
   width: 250px;
-  margin-right: auto;
-  margin-left: auto;
-  color: white;
   margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 body #container #main-title .title {
   background-color: #135375;
@@ -34,8 +39,9 @@ body #container #main-title .title {
   margin: 0;
 }
 body #container #welcome-para {
-  margin-right: auto;
+  margin-bottom: 20px;
   margin-left: auto;
+  margin-right: auto;
 }
 body #container #welcome-para #welcome {
   width: 375px;
@@ -43,16 +49,14 @@ body #container #welcome-para #welcome {
   border: 1px solid #EE6F57;
   border-radius: 10px;
   text-align: center;
-  color: white;
 }
 body #container .game-block {
-  color: white;
   text-align: center;
 }
 body #container .game-block .game-infos .game-name {
   background-color: #EE6F57;
   padding: 2px 10px 2px 10px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 body #container .game-block .game-infos .infos {
   display: flex;
@@ -64,12 +68,13 @@ body #container .game-block .game-infos .infos .score {
   margin: 0;
   background-color: #135375;
   padding: 2px 10px 2px 10px;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 body #container .game-block .game {
   width: auto;
   height: 500px;
   background-color: black;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
