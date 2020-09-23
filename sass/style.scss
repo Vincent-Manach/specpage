@@ -18,7 +18,7 @@ body {
     background-color: #00334E;
     font-family: "Open sans";
     color: #F6F5F5;
-    
+
     #container {
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@ body {
             width: 250px;
             margin-bottom: 10px;
             @include margin;
-            
+
             .title {
                 background-color: $blue;
                 border-radius: $radius;
@@ -74,6 +74,7 @@ body {
         }
 
         .game-block {
+            display: none;
             text-align: center;
             .game-infos {
                 .game-name {
@@ -106,7 +107,21 @@ body {
                     height: 100%;
                 }
             }
-        }   
-        
+        }
+
     }
+}
+
+.nogame {
+  display: inline-block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8px 12px;
+  background-color: $blue;
+  border-radius: $radius;
+  color: #F6F5F5;
+  font-size: 14px;
+  > p {
+    margin: 0 auto;
+  }
 }
