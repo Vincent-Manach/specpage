@@ -3,12 +3,13 @@ body {
   margin: 0;
   background-color: #00334E;
   font-family: "Open sans";
-  color: white;
+  color: #F6F5F5;
 }
 body #container {
   display: flex;
   flex-direction: column;
   width: 65%;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -43,7 +44,7 @@ body #container #main-title {
   margin-right: auto;
 }
 body #container #main-title .title {
-  background-color: #135375;
+  background-color: #145374;
   border-radius: 10px;
   padding: 10px;
   margin: 0;
@@ -76,7 +77,7 @@ body #container .game-block .game-infos .infos {
 }
 body #container .game-block .game-infos .infos .score {
   margin: 0;
-  background-color: #135375;
+  background-color: #145374;
   padding: 2px 10px 2px 10px;
   border-radius: 10px;
 }

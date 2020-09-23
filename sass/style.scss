@@ -1,6 +1,6 @@
 // COLORS
 $orange: #EE6F57;
-$blue : #135375;
+$blue : #145374;
 
 // SIZE
 $radius: 10px;
@@ -17,12 +17,13 @@ body {
     margin: 0;
     background-color: #00334E;
     font-family: "Open sans";
-    color: white;
+    color: #F6F5F5;
     
     #container {
     display: flex;
     flex-direction: column;
     width: 65%;
+    margin-bottom: 20px;
     @media (max-width: 1400px) {
         width: 75%;
     }
