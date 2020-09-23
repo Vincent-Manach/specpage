@@ -7,7 +7,6 @@ let scoreJ1 = 0;
 let scoreJ2 = 0;
 
 
-
 // Show or Hide game
 function setSpecGameOnOff() {
   if (specGameOn == true) {
@@ -36,17 +35,20 @@ function setSpecScore() {
   $('.score2').text(scoreJ2);
 }
 
+// Set timer
+
+
 // Initialise
 setSpecGameOnOff();
 setSpecPlayersNames();
 
 
 function getData(){
-// traitement - websocket
+  // traitement - websocket
 
 
-// rappel après 2 secondes = 2000 millisecondes
-setTimeout('getData',2000);
+  // rappel après 2 secondes = 2000 millisecondes
+  setTimeout('getData',2000);
 }
 
 getData();
