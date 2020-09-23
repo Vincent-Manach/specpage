@@ -27,7 +27,7 @@ function setSpecGameName() {
 // Set players names
 function setSpecPlayersNames() {
   $('.pseudo1').text(pseudoJ1);
-  $('pseudo2').text(pseudoJ2);
+  $('.pseudo2').text(pseudoJ2);
 }
 
 // Set score
@@ -42,7 +42,7 @@ setSpecPlayersNames();
 
 
 function getData(){
-// traitement
+// traitement - websocket
 
 
 // rappel après 2 secondes = 2000 millisecondes
