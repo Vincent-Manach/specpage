@@ -1,5 +1,5 @@
 // Settings
-let specGameOn = true;
+let specGameOn = false;
 let gameName = "Nom du jeu";
 let pseudoJ1 = "Pseudo_joueur_1";
 let pseudoJ2 = "Pseudo_joueur_2";
@@ -17,6 +17,7 @@ function setSpecGameOnOff() {
       $('#canvas-tron').hide();
       $('#canvas-rps').hide();
       $('#canvas-pong').show();
+      specRunPong();
     } else if (gameName == "tron") {
       $('#canvas-pong').hide();
       $('#canvas-rps').hide();
@@ -25,6 +26,7 @@ function setSpecGameOnOff() {
       $('#canvas-pong').hide();
       $('#canvas-tron').hide();
       $('#canvas-rps').show();
+      specRunRps();
     } else {
       $('#canvas-tron, #canvas-tron, #canvas-rps').hide();
     }
