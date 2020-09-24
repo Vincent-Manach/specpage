@@ -15,25 +15,25 @@ function setSpecGameOnOff() {
 
     if (gameName == "pong") {
       $('#canvas-tron').hide();
-      $('#canvas-pfc').hide();
+      $('#canvas-rps').hide();
       $('#canvas-pong').show();
     } else if (gameName == "tron") {
       $('#canvas-pong').hide();
-      $('#canvas-pfc').hide();
+      $('#canvas-rps').hide();
       $('#canvas-tron').show();
-    } else if (gameName == "pfc") {
+    } else if (gameName == "rps") {
       $('#canvas-pong').hide();
       $('#canvas-tron').hide();
-      $('#canvas-pfc').show();
+      $('#canvas-rps').show();
     } else {
-      $('#canvas-tron, #canvas-tron, #canvas-pfc').hide();
+      $('#canvas-tron, #canvas-tron, #canvas-rps').hide();
     }
   } else {
     $('.nogame').show();
     $('.game-block').hide();
     $('#canvas-pong').hide();
     $('#canvas-tron').hide();
-    $('#canvas-pfc').hide();
+    $('#canvas-rps').hide();
   }
 }
 
@@ -85,7 +85,7 @@ function setSpecTimer(countFrom, id) {
 setSpecGameOnOff();
 setSpecGameName();
 setSpecPlayersNames();
-setSpecTimer("Sep 24, 2020 10:08:00", 'countup1');
+setSpecTimer("Sep 24, 2020 13:00:00", 'countup1');
 
 // Traitement - websocket
 var socket = io.connect('192.168.43.54:3000');

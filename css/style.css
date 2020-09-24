@@ -86,7 +86,7 @@ body #container .game-block .game {
   background-color: black;
   margin-bottom: 10px;
 }
-body #container .game-block .game #canvas-pong, body #container .game-block .game #canvas-tron, body #container .game-block .game #canvas-pfc {
+body #container .game-block .game #canvas-pong, body #container .game-block .game #canvas-tron, body #container .game-block .game #canvas-rps {
   width: 100%;
   height: 100%;
   vertical-align: bottom;
