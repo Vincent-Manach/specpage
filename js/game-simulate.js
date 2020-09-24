@@ -87,6 +87,7 @@ function setSpecTimer(countFrom, id) {
 setSpecGameOnOff();
 setSpecGameName();
 setSpecPlayersNames();
+setSpecScore();
 setSpecTimer("Sep 24, 2020 13:00:00", 'countup1');
 
 // Traitement - websocket
@@ -98,3 +99,31 @@ socket.on('connect', function() {
 });
 
 $(document).ready(socket.emit('subscribe', {topic:'manette'}));
+
+// Récupération des données de la partie (nom du jeu, pseudos et date debut) et les afficher.
+let spectGameData = {
+  "gameOn": true,
+  "gameName": "pong",
+  "pseudos": {
+    "joueur1": "Vincent",
+    "joueur2": "Gautier"
+  },
+  "scores": {
+    "scoreJ1": 2,
+    "scoreJ2": 0
+  },
+  "date": "Sep 24, 2020 17:42:00"
+};
+
+specGameOn = spectGameData["gameOn"];
+gameName = spectGameData["gameName"];
+pseudoJ1 = spectGameData["pseudos"]["joueur1"];
+pseudoJ2 = spectGameData["pseudos"]["joueur2"];
+scoreJ1 = spectGameData["scores"]["scoreJ1"];
+scoreJ2 = spectGameData["scores"]["scoreJ2"];
+
+setSpecGameOnOff();
+setSpecGameName();
+setSpecPlayersNames();
+setSpecScore();
+setSpecTimer(spectGameData["date"], 'countup1');
