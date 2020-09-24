@@ -66,15 +66,14 @@ function setSpecTimer(countFrom, id) {
 setSpecGameOnOff();
 setSpecGameName();
 setSpecPlayersNames();
-setSpecTimer("Sep 23, 2020 15:55:00", 'countup1');
+setSpecTimer("Sep 24, 2020 10:08:00", 'countup1');
 
+// Traitement - websocket
+var socket = io.connect('192.168.43.54:3000');
+socket.on('connect', function() {
+    socket.on('manette', function(msg) {
+        console.log(msg.topic+' '+msg.message);
+    });
+});
 
-function getData(){
-  // traitement - websocket
-
-
-  // rappel après 2 secondes = 2000 millisecondes
-  setTimeout('getData',2000);
-}
-
-getData();
+$(document).ready(socket.emit('subscribe', {topic:'manette'}));
