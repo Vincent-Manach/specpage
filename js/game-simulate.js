@@ -12,9 +12,28 @@ function setSpecGameOnOff() {
   if (specGameOn == true) {
     $('.nogame').hide();
     $('.game-block').show();
+
+    if (gameName == "pong") {
+      $('#canvas-tron').hide();
+      $('#canvas-pfc').hide();
+      $('#canvas-pong').show();
+    } else if (gameName == "tron") {
+      $('#canvas-pong').hide();
+      $('#canvas-pfc').hide();
+      $('#canvas-tron').show();
+    } else if (gameName == "pfc") {
+      $('#canvas-pong').hide();
+      $('#canvas-tron').hide();
+      $('#canvas-pfc').show();
+    } else {
+      $('#canvas-tron, #canvas-tron, #canvas-pfc').hide();
+    }
   } else {
     $('.nogame').show();
     $('.game-block').hide();
+    $('#canvas-pong').hide();
+    $('#canvas-tron').hide();
+    $('#canvas-pfc').hide();
   }
 }
 

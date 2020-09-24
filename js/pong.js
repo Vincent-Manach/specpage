@@ -20,7 +20,7 @@ window.cancelRequestAnimFrame = ( function() {
 } )();
 
 // Initialize canvas and required variables
-var canvas = document.getElementById("canvas"),
+var canvas = document.getElementById("canvas-pong"),
     ctx = canvas.getContext("2d"), // Create canvas context
     W = window.innerWidth, // Window's width
     H = window.innerHeight, // Window's height
