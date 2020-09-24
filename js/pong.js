@@ -6,7 +6,8 @@ window.requestAnimFrame = (function(){
         window.oRequestAnimationFrame      ||
         window.msRequestAnimationFrame     ||
         function( callback ){
-            return window.setTimeout(callback, 1000 / 60);
+            return setTimeout(() => {  callback; }, 1000 / 60);
+            // return window.setTimeout(callback, 1000 / 60);
         };
 })();
 
@@ -18,6 +19,7 @@ window.cancelRequestAnimFrame = ( function() {
         window.msCancelRequestAnimationFrame        ||
         clearTimeout
 } )();
+
 
 // Initialize canvas and required variables
 var canvas = document.getElementById("canvas-pong"),
@@ -55,8 +57,26 @@ canvas.height = H;
 
 // Function to paint canvas
 function paintCanvas() {
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "#4169E1";
     ctx.fillRect(0, 0, W, H);
+
+    ctx.beginPath();
+    ctx.fillStyle = "#fff";
+    ctx.setLineDash([15, 5]);
+    ctx.moveTo(0, H/2);
+    ctx.lineTo(W, H/2);
+    ctx.strokeStyle = "#fff";
+    ctx.lineWidth = 4;
+    ctx.stroke();
+
+    // ctx.beginPath();
+    // ctx.fillStyle = 'white';
+    // ctx.setLineDash([]);
+    // ctx.moveTo(W/2, 0);
+    // ctx.lineTo(W/2, H);
+    // ctx.strokeStyle = 'white';
+    // ctx.stroke();
+
 }
 
 // Function for creating paddles
@@ -83,7 +103,7 @@ ball = {
     x: 50,
     y: 50,
     r: 5,
-    c: "green",
+    c: "white",
     vx: 4,
     vy: 8,
 
@@ -105,14 +125,17 @@ startBtn = {
     y: H/2 - 25,
 
     draw: function() {
-        ctx.strokeStyle = "blue";
+        ctx.setLineDash([]);
+        //ctx.strokeStyle = "blue";
         ctx.lineWidth = "2";
         ctx.strokeRect(this.x, this.y, this.w, this.h);
 
+
         ctx.font = "18px Arial, sans-serif";
+        ctx.fontColor = "green"
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillStlye = "Green";
+        ctx.fillStlye = "#483";
         ctx.fillText("Appuyez pour commencer", W/2, H/2 );
     }
 };
@@ -151,7 +174,7 @@ scorePause = {
 // score affiché a la fin
 endScore = {
     draw: function(joueur) {
-        ctx.font = "32px Arial, sans-serif";
+        ctx.font = "32px Cambria bold, sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillStlye = "white";
@@ -161,14 +184,12 @@ endScore = {
 
 }
 
-quitBtn = {
-
-
+/*quitBtn = {
     draw: function() {
         var img = document.getElementById("cross");
         ctx.drawImage(img,W-60,10, 50,50);
     }
-}
+}*/
 
 // Function for creating particles object
 function createParticles(x, y, m) {
@@ -187,8 +208,16 @@ function draw() {
     for(var i = 0; i < paddles.length; i++) {
         p = paddles[i];
 
-        ctx.fillStyle = "green";
-        ctx.fillRect(p.x, p.y, p.w, p.h);
+        if(i==1){
+            ctx.fillStyle = "red";
+            ctx.fillRect(p.x, p.y, p.w, p.h);
+        }
+        if(i==2){
+            ctx.fillStyle = "black";
+            ctx.fillRect(p.x, p.y, p.w, p.h);
+        }
+
+
     }
 
     ball.draw();
@@ -230,7 +259,7 @@ function movePad(p1, p2) {
         if(event.keyCode == 83)
             p2.right = true;
             // p2.x+=p2.vx;
-    });   
+    });
 
     document.addEventListener('keyup', function(event) {
         if(event.keyCode == 37)
@@ -248,15 +277,15 @@ function movePad(p1, p2) {
         if(event.keyCode == 83)
             p2.right = false;
             // p2.x+=p2.vx;
-    });   
+    });
 
 
-        if(p1.right) 
+        if(p1.right)
             p1.x += vx;
         else if(p1.left)
             p1.x -= vx;
 
-        if(p2.right) 
+        if(p2.right)
             p2.x += vx;
         else if(p2.left)
             p2.x -= vx;
@@ -445,7 +474,7 @@ function gameOver() {
         scorePause.draw();
         setTimeout(() => {  restartScreen(); }, 2000);
     }
-    
+
 }
 
 // Function for running the whole animation
@@ -494,7 +523,7 @@ function btnClick(e) {
 
         // Delete the start button after clicking it
         startBtn = {};
-            
+
     }
 
 }

@@ -89,6 +89,7 @@ body #container .game-block .game {
 body #container .game-block .game #canvas-pong, body #container .game-block .game #canvas-tron, body #container .game-block .game #canvas-pfc {
   width: 100%;
   height: 100%;
+  vertical-align: bottom;
 }
 
 .nogame {
