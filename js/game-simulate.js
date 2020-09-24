@@ -72,7 +72,7 @@ setSpecTimer("Sep 24, 2020 10:08:00", 'countup1');
 var socket = io.connect('192.168.43.54:3000');
 socket.on('connect', function() {
     socket.on('manette', function(msg) {
-        console.log(msg.topic+' '+msg.message);
+        console.log(msg.topic+'->'+msg.message);
     });
 });
 
