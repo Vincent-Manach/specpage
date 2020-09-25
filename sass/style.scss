@@ -101,11 +101,19 @@ body {
             .game {
                 background-color: black;
                 margin-bottom: 10px;
+                border: 4px solid #ee6f57;
+                border-radius: 10px;
+                overflow: hidden;
 
                 #canvas-pong, #canvas-tron, #canvas-rps {
                     width: 100%;
                     height: 100%;
                     vertical-align: bottom;
+                }
+                #screenGame {
+                  width: 100%;
+                  height: auto;
+                  vertical-align: bottom;
                 }
             }
         }

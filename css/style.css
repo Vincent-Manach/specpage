@@ -85,10 +85,18 @@ body #container .game-block .game-infos .infos .score {
 body #container .game-block .game {
   background-color: black;
   margin-bottom: 10px;
+  border: 4px solid #ee6f57;
+  border-radius: 10px;
+  overflow: hidden;
 }
 body #container .game-block .game #canvas-pong, body #container .game-block .game #canvas-tron, body #container .game-block .game #canvas-rps {
   width: 100%;
   height: 100%;
+  vertical-align: bottom;
+}
+body #container .game-block .game #screenGame {
+  width: 100%;
+  height: auto;
   vertical-align: bottom;
 }
 

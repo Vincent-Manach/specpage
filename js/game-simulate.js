@@ -94,36 +94,90 @@ setSpecTimer("Sep 24, 2020 13:00:00", 'countup1');
 var socket = io.connect('192.168.43.54:3000');
 socket.on('connect', function() {
     socket.on('manette', function(msg) {
-        console.log(msg.topic+'->'+msg.message);
+        // console.log(msg.topic+'->'+msg.message);
+        // {"button":"B", "value":"LOW", "User": 1 }
+        let manetteData = msg.message;
+    });
+    socket.on('gamedata', function(gdata) {
+        console.log(gdata.topic+'->'+gdata.message);
+
+        // Récupération des données de la partie (nom du jeu, pseudos et date debut) et les afficher.
+        // function specPlayGame() {
+        //   let spectGameData = gdata.message;
+        //
+        //   specGameOn = spectGameData["gameOn"];
+        //   gameName = spectGameData["gameName"];
+        //   pseudoJ1 = spectGameData["pseudos"]["joueur1"];
+        //   pseudoJ2 = spectGameData["pseudos"]["joueur2"];
+        //   scoreJ1 = spectGameData["scores"]["scoreJ1"];
+        //   scoreJ2 = spectGameData["scores"]["scoreJ2"];
+        //
+        //   setSpecGameOnOff();
+        //   setSpecGameName();
+        //   setSpecPlayersNames();
+        //   setSpecScore();
+        //   setSpecTimer(spectGameData["date"], 'countup1');
+        // }
+        //
+        // specPlayGame();
+
     });
 });
 
 $(document).ready(socket.emit('subscribe', {topic:'manette'}));
 
 // Récupération des données de la partie (nom du jeu, pseudos et date debut) et les afficher.
-let spectGameData = {
-  "gameOn": true,
-  "gameName": "pong",
-  "pseudos": {
-    "joueur1": "Vincent",
-    "joueur2": "Gautier"
-  },
-  "scores": {
-    "scoreJ1": 2,
-    "scoreJ2": 0
-  },
-  "date": "Sep 24, 2020 17:42:00"
+function specPlayGame() {
+  let spectGameData = {
+    "gameOn": true,
+    "gameName": "pong test",
+    "pseudos": {
+      "joueur1": "Vincent",
+      "joueur2": "Gautier"
+    },
+    "scores": {
+      "scoreJ1": 0,
+      "scoreJ2": 0
+    },
+    "date": "Sep 25, 2020 10:12:00"
+  };
+
+  specGameOn = spectGameData["gameOn"];
+  gameName = spectGameData["gameName"];
+  pseudoJ1 = spectGameData["pseudos"]["joueur1"];
+  pseudoJ2 = spectGameData["pseudos"]["joueur2"];
+  scoreJ1 = spectGameData["scores"]["scoreJ1"];
+  scoreJ2 = spectGameData["scores"]["scoreJ2"];
+
+  setSpecGameOnOff();
+  setSpecGameName();
+  setSpecPlayersNames();
+  setSpecScore();
+  setSpecTimer(spectGameData["date"], 'countup1');
+}
+
+// Stop game
+function specStopGame() {
+  let spectGameData = {
+    "gameOn": false
+  };
+
+  specGameOn = spectGameData["gameOn"];
+
+  setSpecGameOnOff();
+  setSpecGameName();
+  setSpecPlayersNames();
+  setSpecScore();
+  setSpecTimer(spectGameData["date"], 'countup1');
+}
+
+
+// fonction qui boucle pour avoir un screen du live
+function refresh() {
+   var tmp = new Date();
+   var img = document.getElementById("screenGame");
+   img.src = img.src + '?' + tmp.getTime();
+}
+window.onload = function() {
+  setInterval(refresh,2000);
 };
-
-specGameOn = spectGameData["gameOn"];
-gameName = spectGameData["gameName"];
-pseudoJ1 = spectGameData["pseudos"]["joueur1"];
-pseudoJ2 = spectGameData["pseudos"]["joueur2"];
-scoreJ1 = spectGameData["scores"]["scoreJ1"];
-scoreJ2 = spectGameData["scores"]["scoreJ2"];
-
-setSpecGameOnOff();
-setSpecGameName();
-setSpecPlayersNames();
-setSpecScore();
-setSpecTimer(spectGameData["date"], 'countup1');
