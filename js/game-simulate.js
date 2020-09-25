@@ -1,5 +1,5 @@
 // Settings
-let specGameOn = false;
+let specGameOn = true;
 let gameName = "Nom du jeu";
 let pseudoJ1 = "Pseudo_joueur_1";
 let pseudoJ2 = "Pseudo_joueur_2";
