@@ -130,7 +130,7 @@ $(document).ready(socket.emit('subscribe', {topic:'manette'}));
 function specPlayGame() {
   let spectGameData = {
     "gameOn": true,
-    "gameName": "pong test",
+    "gameName": "Jeu en cours",
     "pseudos": {
       "joueur1": "Vincent",
       "joueur2": "Gautier"
