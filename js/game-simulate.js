@@ -179,5 +179,5 @@ function refresh() {
    img.src = img.src + '?' + tmp.getTime();
 }
 window.onload = function() {
-  setInterval(refresh,2000);
+  setInterval(refresh,600);
 };
