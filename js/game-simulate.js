@@ -153,7 +153,7 @@ function specPlayGame() {
   setSpecGameName();
   setSpecPlayersNames();
   setSpecScore();
-  setSpecTimer(spectGameData["date"], 'countup1');
+  setSpecTimer(new Date(), 'countup1');
 }
 
 // Stop game
